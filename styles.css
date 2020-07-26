@@ -1,0 +1,19 @@
+
+body{
+    background-color:green;
+}
+
+.card {
+    border: 1px solid black;
+    font-size: 70px;
+    border-radius: 10px;
+}
+
+.♥{
+    color:red;
+}
+.♦{
+    color:red;
+}
+
+

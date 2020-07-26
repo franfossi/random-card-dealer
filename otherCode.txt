@@ -1,0 +1,93 @@
+HTML alternativo
+
+<div class="container-fluid text-center">
+        <div class="card heart">
+            <span class="number">7</span>
+        </div>
+    </div>
+
+
+JS alternativo
+
+document.querySelector('.card')classlist.add('heart');
+    set timeout(() => {
+        document.querySelector('.card')classlist.remove('heart');
+        document.querySelector('.card')classlist.add('club');
+    }, 1000);
+
+let generateRandomCardNumber = () => {
+    let numbers = ["A","2","3","4","5","6","7","8","9","J","Q","K"];
+    let indexNumbers = Math.floor(Math.random() * numbers.length);
+    return numbers[indexNumbers];
+} 
+
+let generateRandomSuit = () => {
+    let suites = ["diamond","club","heart","spade"];
+    let indexSuites = Math.floor(Math.random() * suites.length);
+    return suites[indexSuites];
+} 
+
+
+CSS alternativo
+
+
+.spade:before, .spade:after{content:'\2660';}
+.club:before, .club:after{content:'\2663';}
+.heart:before, .heart:after{content:'\2665';}
+.diamond:before, .diamond:after{content:'\2666';}
+
+    .number:before {
+        content: '\2660';
+        position: absolute;
+        top: 5px;
+        left: 20px;
+        font-size: 80px;
+    }
+    .number:after {
+        content: '\2660';
+        position: absolute;
+        bottom: 5px;
+        right: 20px;
+        font-size: 80px;
+    }
+   
+CSS Original
+
+body {
+    background-color: green;
+    box-sizing: border-box;
+}
+
+.card {
+    text-align: center;
+    display: inline-block;
+    height: 400px;
+    width: 250px;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+    padding-top: 130px;
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid black;
+    font-size: 70px;
+}
+
+.spade:before, .heart:before, .club:before, .diamond:before {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    font-size: 80px;
+}
+
+.spade:after, .heart:after, .club:after, .diamond:after {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    font-size: 80px;
+}
+   
+.spade:before, .spade:after{content:'\2660';}
+.club:before, .club:after{content:'\2663';}
+.heart:before, .heart:after{content:'\2665'; color:red;}
+.diamond:before, .diamond:after{content:'\2666'; color:red;}
