@@ -15,6 +15,7 @@ window.onload = () => {
     card.style.border = "1px solid black";
     card.style.borderRadius = "10px";
     card.style.fontSize = "70px";
+    card.innerHTML = `<div class="w-100 h-100 justify-content-center d-flex align-items-center"></div>`;
     
     // pinta de arriba
     let top = document.createElement("div");
@@ -24,6 +25,7 @@ window.onload = () => {
     top.style.left = "50%";
     top.style.top = "50%";
     top.style.transform = "translate(-550%, -800%)"; 
+    top.innerHTML = `<div class="w-50 h-100 justify-content-center d-flex align-items-center"></div>`;
 
     // pinta de abajo
     let bottom = document.createElement("div");
@@ -33,39 +35,20 @@ window.onload = () => {
     bottom.style.left = "50%";
     bottom.style.top = "50%";
     bottom.style.transform = "translate(470%, 650%)";
+    bottom.innerHTML = `<div class="w-50 h-100 justify-content-center d-flex align-items-center"></div>`;
 
-    //numero que esta en el medio de la carta:
-    card.innerHTML = `    
-        <div class="w-100 h-100 justify-content-center d-flex align-items-center">
-        </div>
-    `;
-    // pinta de arriba
-    top.innerHTML = `    
-       <div class="w-50 h-100 justify-content-center d-flex align-items-center">
-        </div>
-    `;
-    // pinta de abajo
-    bottom.innerHTML = `    
-       <div class="w-50 h-100 justify-content-center d-flex align-items-center">
-        </div>
-    `;
-
-    // arreglos 
+    // arreglos y generaración de números y pintas aleatorios 
     let numbers = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-    let suits = ["♠", "♣", "♥", "♦"];
-    
-    // generar números y pintas aleatorios 
     let randomNumber = Math.floor(Math.random() * numbers.length);
+    let suits = ["♠", "♣", "♥", "♦"];
     let randomSuit = Math.floor(Math.random() * suits.length);
 
     // ciclo para generar los números de la carta
     for (child of card.children) {
         // condición para parear colores de pintas con números
-        if (suits[randomSuit] == "♥") {
+        if (suits[randomSuit] == "♥" || suits[randomSuit] == "♦") {
             child.style.color = "red";
-        }  if (suits[randomSuit] == "♦") {
-                child.style.color = "red";
-            }
+        }  
         child.style.fontFamily = "arial";
         child.classList.add(`${numbers[randomNumber]}`);
         child.innerHTML = `<p class="text-center">${numbers[randomNumber]}</p>`;
